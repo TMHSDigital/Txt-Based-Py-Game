@@ -14,4 +14,5 @@ This is a text-based adventure game written in Python. The player navigates thro
 - `player.py`: Player class.
 - `room.py`: Room class.
 - `item.py`: Item class.
+- `enemy.py`: Enemy class.
 - `save_load.py`: Functions for saving and loading game progress.
