@@ -4,6 +4,7 @@ class Room:
         self.description = description
         self.exits = {}
         self.items = []
+        self.enemies = []
 
     def set_exit(self, direction, room):
         self.exits[direction] = room
@@ -12,7 +13,16 @@ class Room:
         return self.exits.get(direction, None)
 
     def get_description(self):
-        return f"{self.name}\n\n{self.description}"
+        desc = f"{self.name}\n\n{self.description}\n"
+        if self.items:
+            desc += "\nYou see the following items:\n"
+            for item in self.items:
+                desc += f"- {item.name}: {item.description}\n"
+        if self.enemies:
+            desc += "\nEnemies in this room:\n"
+            for enemy in self.enemies:
+                desc += f"- {enemy.name}: {enemy.health} HP\n"
+        return desc
 
     def add_item(self, item):
         self.items.append(item)
@@ -23,3 +33,6 @@ class Room:
                 self.items.remove(item)
                 return item
         return None
+
+    def add_enemy(self, enemy):
+        self.enemies.append(enemy)
