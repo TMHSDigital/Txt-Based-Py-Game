@@ -1,4 +1,3 @@
-import pickle
 from player import Player
 from room import Room
 from item import Item
@@ -6,65 +5,102 @@ from enemy import Enemy
 from save_load import save_game, load_game
 
 def main():
+    print("Enter your character's name: ")
+    player_name = input("> ")
+    player = Player(player_name, 100, 20, 10)
+
     # Create items
-    sword = Item("Sword", "A sharp looking sword", "weapon", attack_bonus=10)
-    shield = Item("Shield", "A sturdy shield", "armor", defense_bonus=5)
-    health_potion = Item("Health Potion", "A potion that restores health", "health", health_bonus=20)
+    sword = Item("Sword", "A sharp looking sword", attack=10)
+    shield = Item("Shield", "A sturdy shield", defense=10)
+    health_potion = Item("Health Potion", "A potion that restores health", health=20)
+
+    # Create enemies
+    goblin = Enemy("Goblin", 50, 10, 5, drop_items=[health_potion])
+    wolf = Enemy("Wolf", 70, 15, 10, drop_items=[sword])
+    dragon = Enemy("Dragon", 200, 50, 20, drop_items=[shield])
 
     # Create rooms
     start_room = Room("Start Room", "This is the room you start in.")
     second_room = Room("Second Room", "This room has a sword in it.")
     third_room = Room("Third Room", "This room has a shield in it.")
-    base_camp = Room("Base Camp", "This is your base camp. You can save your progress here.")
+    fourth_room = Room("Fourth Room", "This room has a health potion in it.")
+    boss_room = Room("Boss Room", "This room has a dragon in it.")
 
-    # Add items to rooms
+    # Connect rooms
+    start_room.connect_room(second_room, "north")
+    second_room.connect_room(start_room, "south")
+    second_room.connect_room(third_room, "east")
+    third_room.connect_room(second_room, "west")
+    third_room.connect_room(fourth_room, "north")
+    fourth_room.connect_room(third_room, "south")
+    fourth_room.connect_room(boss_room, "east")
+    boss_room.connect_room(fourth_room, "west")
+
+    # Add items and enemies to rooms
     second_room.add_item(sword)
     third_room.add_item(shield)
-
-    # Link rooms
-    start_room.set_exit("north", second_room)
-    second_room.set_exit("south", start_room)
-    second_room.set_exit("east", third_room)
-    third_room.set_exit("west", second_room)
-    start_room.set_exit("west", base_camp)
-    base_camp.set_exit("east", start_room)
-
-    # Create enemies
-    goblin = Enemy("Goblin", 50, 5, 2, [health_potion])
-    wolf = Enemy("Wolf", 70, 10, 5, [sword])
-
-    # Add enemies to rooms
+    fourth_room.add_item(health_potion)
     second_room.add_enemy(goblin)
     third_room.add_enemy(wolf)
+    boss_room.add_enemy(dragon)
 
-    # Create player
-    player_name = input("Enter your character's name: ")
-    player = Player(player_name, start_room)
+    current_room = start_room
 
-    # Game loop
     while True:
-        print(player.current_room.get_description())
-        command = input("> ").strip().lower()
+        print(f"\n{current_room.name}\n")
+        print(f"{current_room.description}\n")
 
-        if command in ["quit", "exit"]:
-            print("Thank you for playing!")
-            break
-        elif command == "save":
-            save_game(player)
-            print("Game saved!")
+        if current_room.items:
+            print("You see the following items:")
+            for item in current_room.items:
+                print(f"- {item.name}: {item.description}")
+
+        if current_room.enemies:
+            print("\nEnemies in this room:")
+            for enemy in current_room.enemies:
+                print(f"- {enemy.name}: {enemy.health} HP")
+
+        print("\n> ", end="")
+        command = input().strip().lower()
+
+        if command == "save":
+            save_game(player, current_room)
+            print("Game saved.")
         elif command == "load":
-            player = load_game()
-            print(f"Welcome back, {player.name}!")
+            player, current_room = load_game()
+            print("Game loaded.")
+        elif command == "quit":
+            print("Goodbye!")
+            break
         elif command in ["north", "south", "east", "west"]:
-            player.move(command)
+            next_room = current_room.move(command)
+            if next_room:
+                current_room = next_room
+                print(f"You move {command}.")
+            else:
+                print("You can't go that way.")
         elif command.startswith("take "):
             item_name = command[5:]
-            player.take_item(item_name)
-        elif command.startswith("drop "):
-            item_name = command[5:]
-            player.drop_item(item_name)
-        elif command == "attack":
-            player.attack()
+            item = current_room.take_item(item_name)
+            if item:
+                player.add_item(item)
+                print(f"You take the {item.name}.")
+            else:
+                print(f"There is no {item_name} here.")
+        elif command.startswith("attack "):
+            enemy_name = command[7:]
+            enemy = current_room.get_enemy(enemy_name)
+            if enemy:
+                player.attack(enemy)
+                if enemy.is_dead():
+                    print(f"You have defeated the {enemy.name}!")
+                    for item in enemy.drop_items:
+                        current_room.add_item(item)
+                    current_room.remove_enemy(enemy)
+                else:
+                    print(f"The {enemy.name} has {enemy.health} HP left.")
+            else:
+                print(f"There is no {enemy_name} here.")
         else:
             print("Unknown command. Try again.")
 
