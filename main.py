@@ -1,5 +1,4 @@
-from game import Game
+from game import main
 
 if __name__ == "__main__":
-    game = Game()
-    game.start()
+    main()
