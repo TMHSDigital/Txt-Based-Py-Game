@@ -1,18 +1,126 @@
-# Text-Based Adventure Game
+- - - - -- - - - Game Commands - - - - -- - - 
+-Movement Commands
+---north: Move north.
+---south: Move south.
+---east: Move east.
+---west: Move west.
+-Item Commands
+---take <item>: Take an item from the room and add it to your inventory.
+-Combat Commands
+---attack <enemy>: Attack an enemy in the room.
+-Game Management Commands
+---save: Save the game.
+---load: Load the game.
+---quit: Exit the game.
+- - - - -- - - - Features - - - - -- - - 
+-Rooms
+---Players can move between connected rooms.
+---Each room can contain items and enemies.
+-Items
+---Items can be taken and added to the player's inventory.
+---Items can have different effects, such as increasing attack, defense, or health.
+-Enemies
+---Enemies can be attacked by the player.
+---Enemies can drop items upon defeat.
+-Saving and Loading
+---The game state can be saved and loaded.
 
-This is a text-based adventure game written in Python. The player navigates through different rooms, collects items, and tries to win the game by defeating the final boss.
+- - - - -- - - - EXAMPLE GAMEPLAY - - - - -- - - 
 
-## How to Play
+markdown
+Copy code
+Enter your character's name: Paint
+Start Room
 
-1. Run the game using the command: `python game.py`
-2. Follow the on-screen instructions to navigate through the rooms and interact with the game.
-3. You can save your progress at the base camp.
+This is the room you start in.
 
-## Project Structure
+> north
+You move north.
+Second Room
 
-- `game.py`: Main game logic.
-- `player.py`: Player class.
-- `room.py`: Room class.
-- `item.py`: Item class.
-- `enemy.py`: Enemy class.
-- `save_load.py`: Functions for saving and loading game progress.
+This room has a sword in it.
+
+You see the following items:
+- Sword: A sharp looking sword
+
+Enemies in this room:
+- Goblin: 50 HP
+
+> take sword
+You take the sword.
+Second Room
+
+This room has a sword in it.
+
+Enemies in this room:
+- Goblin: 50 HP
+
+> attack goblin
+You attack the Goblin and deal 15 damage.
+The Goblin attacks and deals 5 damage to you.
+
+Second Room
+
+This room has a sword in it.
+
+Enemies in this room:
+- Goblin: 35 HP
+
+> attack goblin
+You attack the Goblin and deal 15 damage.
+The Goblin attacks and deals 5 damage to you.
+
+Second Room
+
+This room has a sword in it.
+
+Enemies in this room:
+- Goblin: 20 HP
+
+> attack goblin
+You attack the Goblin and deal 15 damage.
+The Goblin attacks and deals 5 damage to you.
+
+Second Room
+
+This room has a sword in it.
+
+Enemies in this room:
+- Goblin: 5 HP
+
+> attack goblin
+You attack the Goblin and deal 15 damage.
+You have defeated the Goblin!
+The Goblin dropped the following items:
+- Health Potion: A potion that restores health
+
+> take health potion
+You take the Health Potion.
+Second Room
+
+This room has a sword in it.
+
+Enemies in this room:
+- None
+
+> south
+You move south.
+Start Room
+
+This is the room you start in.
+
+> save
+Game saved.
+
+> quit
+
+<END OF GAMEPLAY>
+
+
+yaml
+Copy code
+
+### To Run the Game
+Use the following command:
+```bash
+python main.py
