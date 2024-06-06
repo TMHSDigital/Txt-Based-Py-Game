@@ -1,14 +1,17 @@
 # Text-Based Adventure Game
-Welcome to the Text-Based Adventure Game! This project is a text-based adventure where you create a character, face enemies, and try to survive through various encounters.
+
+This is a text-based adventure game written in Python. The player navigates through different rooms, collects items, and tries to win the game by defeating the final boss.
+
+## How to Play
+
+1. Run the game using the command: `python game.py`
+2. Follow the on-screen instructions to navigate through the rooms and interact with the game.
+3. You can save your progress at the base camp.
 
 ## Project Structure
-text_adventure_game/
-├── README.md # Project documentation
-├── game.py # Contains the Game class and game logic
-├── character.py # Contains the Character class and character logic
-└── main.py # Entry point for the game
 
-## How to Run the Game
-1. Ensure you have Python installed on your machine.
-2. Navigate to the project directory.
-3. Run the game by executing the following command in your terminal: python main.py
+- `game.py`: Main game logic.
+- `player.py`: Player class.
+- `room.py`: Room class.
+- `item.py`: Item class.
+- `save_load.py`: Functions for saving and loading game progress.
