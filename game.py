@@ -1,73 +1,60 @@
-import time
-from character import Character
+import pickle
+from player import Player
+from room import Room
+from item import Item
+from save_load import save_game, load_game
 
-class Game:
-    def __init__(self):
-        self.player = None
-        self.enemy = None
+def main():
+    # Create items
+    sword = Item("Sword", "A sharp looking sword")
+    shield = Item("Shield", "A sturdy shield")
 
-    def start(self):
-        self.introduction()
-        self.create_character()
-        self.first_encounter()
-        if self.player.is_alive():
-            self.second_encounter()
-        if self.player.is_alive():
-            self.final_encounter()
+    # Create rooms
+    start_room = Room("Start Room", "This is the room you start in.")
+    second_room = Room("Second Room", "This room has a sword in it.")
+    third_room = Room("Third Room", "This room has a shield in it.")
+    base_camp = Room("Base Camp", "This is your base camp. You can save your progress here.")
 
-    def introduction(self):
-        print("Welcome to the Text-Based Adventure Game!")
-        print("You will face various enemies and challenges.")
-        print("Your goal is to survive and defeat all enemies.")
-        time.sleep(2)
+    # Add items to rooms
+    second_room.add_item(sword)
+    third_room.add_item(shield)
 
-    def create_character(self):
-        name = input("Enter your character's name: ")
-        self.player = Character(name, health=100, attack=20, defense=10)
-        print(f"{self.player.name} has been created with {self.player.health} health, {self.player.attack} attack, and {self.player.defense} defense.")
+    # Link rooms
+    start_room.set_exit("north", second_room)
+    second_room.set_exit("south", start_room)
+    second_room.set_exit("east", third_room)
+    third_room.set_exit("west", second_room)
+    start_room.set_exit("west", base_camp)
+    base_camp.set_exit("east", start_room)
 
-    def first_encounter(self):
-        print("\nFirst Encounter: A wild goblin appears!")
-        self.enemy = Character("Goblin", health=50, attack=10, defense=5)
-        self.battle()
+    # Create player
+    player_name = input("Enter your character's name: ")
+    player = Player(player_name, start_room)
 
-    def second_encounter(self):
-        print("\nSecond Encounter: A fierce wolf attacks!")
-        self.enemy = Character("Wolf", health=70, attack=15, defense=8)
-        self.battle()
+    # Game loop
+    while True:
+        print(player.current_room.get_description())
+        command = input("> ").strip().lower()
 
-    def final_encounter(self):
-        print("\nFinal Encounter: A mighty dragon blocks your path!")
-        self.enemy = Character("Dragon", health=150, attack=25, defense=15)
-        self.battle()
-
-    def battle(self):
-        while self.player.is_alive() and self.enemy.is_alive():
-            print(f"\n{self.player.name}: {self.player.health} HP")
-            print(f"{self.enemy.name}: {self.enemy.health} HP")
-            action = input("Choose your action (attack/defend/run): ").lower()
-            if action == "attack":
-                damage = self.player.attack_enemy(self.enemy)
-                print(f"You attack the {self.enemy.name} and deal {damage} damage.")
-            elif action == "defend":
-                self.player.defense += 5
-                print(f"You brace yourself and increase your defense to {self.player.defense}.")
-            elif action == "run":
-                print("You run away from the battle!")
-                return
-            else:
-                print("Invalid action. Please choose again.")
-                continue
-
-            if self.enemy.is_alive():
-                damage = self.enemy.attack_enemy(self.player)
-                print(f"The {self.enemy.name} attacks and deals {damage} damage to you.")
-
-        if self.player.is_alive():
-            print(f"\nYou have defeated the {self.enemy.name}!")
+        if command in ["quit", "exit"]:
+            print("Thank you for playing!")
+            break
+        elif command == "save":
+            save_game(player)
+            print("Game saved!")
+        elif command == "load":
+            player = load_game()
+            print(f"Welcome back, {player.name}!")
+        elif command in ["north", "south", "east", "west"]:
+            player.move(command)
+        elif command.startswith("take "):
+            item_name = command[5:]
+            player.take_item(item_name)
+        elif command.startswith("drop "):
+            item_name = command[5:]
+            player.drop_item(item_name)
         else:
-            print(f"\nYou have been defeated by the {self.enemy.name}... Game Over.")
+            print("Unknown command. Try again.")
 
 if __name__ == "__main__":
-    game = Game()
-    game.start()
+    main()
