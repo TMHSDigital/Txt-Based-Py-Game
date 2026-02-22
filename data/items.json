@@ -1,0 +1,219 @@
+{
+  "rusty_dagger": {
+    "name": "Rusty Dagger",
+    "description": "A worn dagger, still sharp enough to draw blood.",
+    "item_type": "weapon",
+    "slot": "main_hand",
+    "attack_bonus": 3,
+    "defense_bonus": 0,
+    "value": 5,
+    "rarity": "common"
+  },
+  "short_sword": {
+    "name": "Short Sword",
+    "description": "A reliable one-handed sword.",
+    "item_type": "weapon",
+    "slot": "main_hand",
+    "attack_bonus": 8,
+    "defense_bonus": 0,
+    "value": 25,
+    "rarity": "common"
+  },
+  "long_sword": {
+    "name": "Long Sword",
+    "description": "A sharp, well-balanced blade. A warrior's weapon.",
+    "item_type": "weapon",
+    "slot": "main_hand",
+    "attack_bonus": 15,
+    "defense_bonus": 0,
+    "value": 75,
+    "rarity": "uncommon"
+  },
+  "enchanted_blade": {
+    "name": "Enchanted Blade",
+    "description": "A sword that hums with arcane energy.",
+    "item_type": "weapon",
+    "slot": "main_hand",
+    "attack_bonus": 25,
+    "defense_bonus": 0,
+    "value": 200,
+    "rarity": "rare"
+  },
+  "dragon_slayer": {
+    "name": "Dragon Slayer",
+    "description": "Forged in dragonfire. The ultimate weapon.",
+    "item_type": "weapon",
+    "slot": "main_hand",
+    "attack_bonus": 40,
+    "defense_bonus": 5,
+    "value": 1000,
+    "rarity": "legendary"
+  },
+  "wooden_shield": {
+    "name": "Wooden Shield",
+    "description": "A basic shield carved from oak.",
+    "item_type": "armor",
+    "slot": "off_hand",
+    "attack_bonus": 0,
+    "defense_bonus": 4,
+    "value": 10,
+    "rarity": "common"
+  },
+  "iron_shield": {
+    "name": "Iron Shield",
+    "description": "A solid iron shield. Heavy but reliable.",
+    "item_type": "armor",
+    "slot": "off_hand",
+    "attack_bonus": 0,
+    "defense_bonus": 8,
+    "value": 40,
+    "rarity": "common"
+  },
+  "tower_shield": {
+    "name": "Tower Shield",
+    "description": "A massive shield that covers you from neck to toe.",
+    "item_type": "armor",
+    "slot": "off_hand",
+    "attack_bonus": 0,
+    "defense_bonus": 15,
+    "value": 150,
+    "rarity": "uncommon"
+  },
+  "leather_armor": {
+    "name": "Leather Armor",
+    "description": "Supple leather that won't slow you down.",
+    "item_type": "armor",
+    "slot": "chest",
+    "attack_bonus": 0,
+    "defense_bonus": 5,
+    "value": 20,
+    "rarity": "common"
+  },
+  "chainmail": {
+    "name": "Chainmail",
+    "description": "Interlocked iron rings. Good protection.",
+    "item_type": "armor",
+    "slot": "chest",
+    "attack_bonus": 0,
+    "defense_bonus": 10,
+    "value": 80,
+    "rarity": "uncommon"
+  },
+  "plate_armor": {
+    "name": "Plate Armor",
+    "description": "Full plate steel. Nearly impenetrable.",
+    "item_type": "armor",
+    "slot": "chest",
+    "attack_bonus": 0,
+    "defense_bonus": 20,
+    "value": 300,
+    "rarity": "rare"
+  },
+  "leather_boots": {
+    "name": "Leather Boots",
+    "description": "Comfortable and quiet.",
+    "item_type": "armor",
+    "slot": "feet",
+    "attack_bonus": 0,
+    "defense_bonus": 2,
+    "value": 10,
+    "rarity": "common"
+  },
+  "iron_helmet": {
+    "name": "Iron Helmet",
+    "description": "Protects your skull from blunt trauma.",
+    "item_type": "armor",
+    "slot": "head",
+    "attack_bonus": 0,
+    "defense_bonus": 4,
+    "value": 30,
+    "rarity": "common"
+  },
+  "amulet_of_vitality": {
+    "name": "Amulet of Vitality",
+    "description": "A glowing amulet that bolsters your constitution.",
+    "item_type": "armor",
+    "slot": "neck",
+    "attack_bonus": 0,
+    "defense_bonus": 3,
+    "max_health_bonus": 30,
+    "value": 120,
+    "rarity": "uncommon"
+  },
+  "ring_of_strength": {
+    "name": "Ring of Strength",
+    "description": "Grants unnatural strength to the wearer.",
+    "item_type": "armor",
+    "slot": "ring",
+    "attack_bonus": 8,
+    "defense_bonus": 0,
+    "value": 100,
+    "rarity": "uncommon"
+  },
+  "health_potion": {
+    "name": "Health Potion",
+    "description": "A red vial that restores 40 health.",
+    "item_type": "consumable",
+    "slot": "",
+    "health_restore": 40,
+    "consumable": true,
+    "value": 15,
+    "rarity": "common"
+  },
+  "greater_health_potion": {
+    "name": "Greater Health Potion",
+    "description": "A potent potion that restores 100 health.",
+    "item_type": "consumable",
+    "slot": "",
+    "health_restore": 100,
+    "consumable": true,
+    "value": 50,
+    "rarity": "uncommon"
+  },
+  "antidote": {
+    "name": "Antidote",
+    "description": "Cures poison.",
+    "item_type": "consumable",
+    "slot": "",
+    "consumable": true,
+    "value": 20,
+    "rarity": "common",
+    "on_use_effects": [
+      {"name": "cleanse", "duration": 1, "heal_per_turn": 0}
+    ]
+  },
+  "strength_potion": {
+    "name": "Strength Potion",
+    "description": "Doubles your attack power for 5 turns.",
+    "item_type": "consumable",
+    "slot": "",
+    "consumable": true,
+    "value": 40,
+    "rarity": "uncommon",
+    "on_use_effects": [
+      {"name": "strength_boost", "duration": 5, "attack_modifier": 15}
+    ]
+  },
+  "poison_vial": {
+    "name": "Poison Vial",
+    "description": "A vial of contact poison. Throw at an enemy... or drink if you're brave.",
+    "item_type": "consumable",
+    "slot": "",
+    "consumable": true,
+    "value": 25,
+    "rarity": "common",
+    "on_use_effects": [
+      {"name": "poison", "duration": 4, "damage_per_turn": 8}
+    ]
+  },
+  "gold_coins": {
+    "name": "Gold Coins",
+    "description": "Currency of the realm.",
+    "item_type": "misc",
+    "slot": "",
+    "consumable": false,
+    "stackable": true,
+    "value": 1,
+    "rarity": "common"
+  }
+}

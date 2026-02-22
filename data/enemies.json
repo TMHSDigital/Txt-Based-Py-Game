@@ -1,0 +1,233 @@
+{
+  "goblin": {
+    "name": "Goblin",
+    "description": "A small, green-skinned creature with beady eyes and a rusty blade.",
+    "health": 40,
+    "stats": {
+      "strength": 7,
+      "dexterity": 12,
+      "constitution": 8,
+      "intelligence": 5
+    },
+    "base_attack": 6,
+    "base_defense": 2,
+    "ai": "aggressive",
+    "flee_threshold": 0.15,
+    "faction": "monsters",
+    "loot_table": {
+      "entries": [
+        {"item_id": "rusty_dagger", "chance": 0.3},
+        {"item_id": "health_potion", "chance": 0.4},
+        {"item_id": "gold_coins", "chance": 0.8, "quantity_min": 2, "quantity_max": 8}
+      ],
+      "guaranteed": []
+    },
+    "respawn_turns": 0,
+    "xp_reward": 30
+  },
+  "goblin_brute": {
+    "name": "Goblin Brute",
+    "description": "A larger, muscle-bound goblin wielding a crude club.",
+    "health": 70,
+    "stats": {
+      "strength": 13,
+      "dexterity": 8,
+      "constitution": 12,
+      "intelligence": 4
+    },
+    "base_attack": 12,
+    "base_defense": 4,
+    "ai": "aggressive",
+    "flee_threshold": 0.1,
+    "faction": "monsters",
+    "loot_table": {
+      "entries": [
+        {"item_id": "wooden_shield", "chance": 0.2},
+        {"item_id": "health_potion", "chance": 0.5},
+        {"item_id": "gold_coins", "chance": 0.9, "quantity_min": 5, "quantity_max": 15}
+      ],
+      "guaranteed": []
+    },
+    "respawn_turns": 0,
+    "xp_reward": 60
+  },
+  "wolf": {
+    "name": "Wolf",
+    "description": "A grey wolf, fangs bared, hackles raised.",
+    "health": 55,
+    "stats": {
+      "strength": 10,
+      "dexterity": 14,
+      "constitution": 10,
+      "intelligence": 4
+    },
+    "base_attack": 9,
+    "base_defense": 3,
+    "ai": "aggressive",
+    "flee_threshold": 0.2,
+    "faction": "beasts",
+    "loot_table": {
+      "entries": [
+        {"item_id": "health_potion", "chance": 0.3},
+        {"item_id": "gold_coins", "chance": 0.4, "quantity_min": 1, "quantity_max": 5}
+      ],
+      "guaranteed": []
+    },
+    "respawn_turns": 0,
+    "xp_reward": 45
+  },
+  "dire_wolf": {
+    "name": "Dire Wolf",
+    "description": "A massive, black-furred wolf the size of a horse. Ancient and dangerous.",
+    "health": 110,
+    "stats": {
+      "strength": 16,
+      "dexterity": 14,
+      "constitution": 14,
+      "intelligence": 6
+    },
+    "base_attack": 18,
+    "base_defense": 6,
+    "ai": "aggressive",
+    "flee_threshold": 0.15,
+    "faction": "beasts",
+    "loot_table": {
+      "entries": [
+        {"item_id": "long_sword", "chance": 0.1},
+        {"item_id": "greater_health_potion", "chance": 0.4},
+        {"item_id": "gold_coins", "chance": 0.9, "quantity_min": 10, "quantity_max": 30}
+      ],
+      "guaranteed": []
+    },
+    "respawn_turns": 0,
+    "xp_reward": 120
+  },
+  "skeleton": {
+    "name": "Skeleton",
+    "description": "An animated skeleton in rusted armor. Its eye sockets glow with pale light.",
+    "health": 50,
+    "stats": {
+      "strength": 10,
+      "dexterity": 8,
+      "constitution": 10,
+      "intelligence": 3
+    },
+    "base_attack": 8,
+    "base_defense": 6,
+    "ai": "aggressive",
+    "flee_threshold": 0.0,
+    "faction": "undead",
+    "loot_table": {
+      "entries": [
+        {"item_id": "iron_helmet", "chance": 0.15},
+        {"item_id": "short_sword", "chance": 0.2},
+        {"item_id": "gold_coins", "chance": 0.6, "quantity_min": 3, "quantity_max": 12}
+      ],
+      "guaranteed": []
+    },
+    "respawn_turns": 0,
+    "xp_reward": 50
+  },
+  "skeleton_archer": {
+    "name": "Skeleton Archer",
+    "description": "A skeleton carrying a longbow. It fires with unsettling accuracy.",
+    "health": 40,
+    "stats": {
+      "strength": 8,
+      "dexterity": 16,
+      "constitution": 8,
+      "intelligence": 3
+    },
+    "base_attack": 12,
+    "base_defense": 3,
+    "ai": "aggressive",
+    "flee_threshold": 0.25,
+    "faction": "undead",
+    "loot_table": {
+      "entries": [
+        {"item_id": "gold_coins", "chance": 0.5, "quantity_min": 2, "quantity_max": 8}
+      ],
+      "guaranteed": []
+    },
+    "respawn_turns": 0,
+    "xp_reward": 55
+  },
+  "troll": {
+    "name": "Troll",
+    "description": "A massive, warty brute regenerating wounds before your eyes.",
+    "health": 180,
+    "stats": {
+      "strength": 18,
+      "dexterity": 6,
+      "constitution": 20,
+      "intelligence": 4
+    },
+    "base_attack": 22,
+    "base_defense": 10,
+    "ai": "aggressive",
+    "flee_threshold": 0.05,
+    "faction": "monsters",
+    "loot_table": {
+      "entries": [
+        {"item_id": "plate_armor", "chance": 0.08},
+        {"item_id": "tower_shield", "chance": 0.1},
+        {"item_id": "greater_health_potion", "chance": 0.6},
+        {"item_id": "gold_coins", "chance": 1.0, "quantity_min": 20, "quantity_max": 60}
+      ],
+      "guaranteed": []
+    },
+    "respawn_turns": 0,
+    "xp_reward": 200
+  },
+  "lich": {
+    "name": "Lich",
+    "description": "An ancient undead sorcerer. Reality warps around its skeletal form.",
+    "health": 250,
+    "stats": {
+      "strength": 10,
+      "dexterity": 12,
+      "constitution": 14,
+      "intelligence": 22
+    },
+    "base_attack": 30,
+    "base_defense": 14,
+    "ai": "aggressive",
+    "flee_threshold": 0.05,
+    "faction": "undead",
+    "loot_table": {
+      "entries": [
+        {"item_id": "enchanted_blade", "chance": 0.3},
+        {"item_id": "ring_of_strength", "chance": 0.4},
+        {"item_id": "amulet_of_vitality", "chance": 0.4},
+        {"item_id": "gold_coins", "chance": 1.0, "quantity_min": 50, "quantity_max": 150}
+      ],
+      "guaranteed": ["greater_health_potion"]
+    },
+    "respawn_turns": 0,
+    "xp_reward": 500
+  },
+  "dragon": {
+    "name": "Ancient Dragon",
+    "description": "A colossal red dragon. Its breath alone could melt steel. This is the final boss.",
+    "health": 500,
+    "stats": {
+      "strength": 24,
+      "dexterity": 10,
+      "constitution": 24,
+      "intelligence": 18
+    },
+    "base_attack": 50,
+    "base_defense": 25,
+    "ai": "aggressive",
+    "flee_threshold": 0.0,
+    "faction": "monsters",
+    "loot_table": {
+      "entries": [
+        {"item_id": "gold_coins", "chance": 1.0, "quantity_min": 200, "quantity_max": 500}
+      ],
+      "guaranteed": ["dragon_slayer", "plate_armor", "amulet_of_vitality"]
+    },
+    "respawn_turns": 0,
+    "xp_reward": 2000
+  }
+}

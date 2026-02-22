@@ -1,0 +1,89 @@
+{
+  "clear_the_road": {
+    "title": "Clear the Road",
+    "description": "Wolves have been attacking travelers on the road to the Darkwood. The garrison sergeant wants them dealt with.",
+    "objectives": [
+      {
+        "objective_id": "kill_wolves",
+        "description": "Kill wolves on the Darkwood Road",
+        "objective_type": "kill",
+        "target_id": "wolf",
+        "required_count": 3
+      }
+    ],
+    "reward_xp": 100,
+    "reward_gold": 30,
+    "reward_items": ["health_potion"]
+  },
+  "goblin_menace": {
+    "title": "The Goblin Menace",
+    "description": "Goblins from the Darkwood have been raiding the market stalls at night. Find their hollow and put an end to it.",
+    "objectives": [
+      {
+        "objective_id": "kill_goblins",
+        "description": "Slay goblins in the Darkwood",
+        "objective_type": "kill",
+        "target_id": "goblin",
+        "required_count": 5
+      },
+      {
+        "objective_id": "kill_brute",
+        "description": "Defeat the Goblin Brute leader",
+        "objective_type": "kill",
+        "target_id": "goblin_brute",
+        "required_count": 1
+      }
+    ],
+    "reward_xp": 200,
+    "reward_gold": 75,
+    "reward_items": ["short_sword"]
+  },
+  "into_the_ruins": {
+    "title": "Into the Ruins",
+    "description": "A scholar believes the ruins hold ancient texts. Enter the dungeon and find the archive.",
+    "objectives": [
+      {
+        "objective_id": "visit_archive",
+        "description": "Find the Ruined Archive",
+        "objective_type": "visit",
+        "target_id": "archive",
+        "required_count": 1
+      }
+    ],
+    "reward_xp": 150,
+    "reward_gold": 50,
+    "reward_items": []
+  },
+  "slay_the_lich": {
+    "title": "Slay the Lich",
+    "description": "The source of the undead plague. A lich commands them from deep within the ruins. End it.",
+    "objectives": [
+      {
+        "objective_id": "kill_lich",
+        "description": "Defeat the Lich",
+        "objective_type": "kill",
+        "target_id": "lich",
+        "required_count": 1
+      }
+    ],
+    "reward_xp": 1000,
+    "reward_gold": 200,
+    "reward_items": ["enchanted_blade"]
+  },
+  "slay_the_dragon": {
+    "title": "Dragon Slayer",
+    "description": "The ancient dragon at the heart of the dungeon is the true source of the corruption. Defeat it to save Ironhaven.",
+    "objectives": [
+      {
+        "objective_id": "kill_dragon",
+        "description": "Defeat the Ancient Dragon",
+        "objective_type": "kill",
+        "target_id": "dragon",
+        "required_count": 1
+      }
+    ],
+    "reward_xp": 5000,
+    "reward_gold": 1000,
+    "reward_items": []
+  }
+}

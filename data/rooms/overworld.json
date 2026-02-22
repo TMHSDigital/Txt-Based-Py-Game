@@ -1,0 +1,119 @@
+{
+  "zone": "overworld",
+  "rooms": {
+    "town_square": {
+      "name": "Ironhaven Town Square",
+      "description": "The beating heart of Ironhaven. A weathered fountain stands at the center, its stone basin cracked from decades of frost. Merchants hawk their wares from canvas stalls. To the north, a dirt road winds toward the Darkwood forest. To the east, stone steps lead up to the garrison.",
+      "exits": {
+        "north": "darkwood_road",
+        "east": "garrison",
+        "south": "market",
+        "west": "inn"
+      },
+      "items": [],
+      "enemies": [],
+      "is_safe": true
+    },
+    "inn": {
+      "name": "The Rusted Flagon Inn",
+      "description": "A warm, low-ceilinged tavern that smells of tallow and ale. The innkeeper, a stout woman named Marta, eyes you from behind the bar. A fireplace crackles in the corner.",
+      "exits": {
+        "east": "town_square"
+      },
+      "items": ["health_potion"],
+      "enemies": [],
+      "is_safe": true,
+      "npc": "innkeeper_marta"
+    },
+    "market": {
+      "name": "Ironhaven Market",
+      "description": "Rows of stalls overflow with goods: dried herbs, second-hand weapons, suspicious potions. The air smells of sawdust and sweat.",
+      "exits": {
+        "north": "town_square"
+      },
+      "items": ["health_potion", "rusty_dagger", "wooden_shield"],
+      "enemies": [],
+      "is_safe": true
+    },
+    "garrison": {
+      "name": "Ironhaven Garrison",
+      "description": "The town's militia headquarters. Iron-banded doors and arrow slits speak to its defensive purpose. A sergeant paces the courtyard, barking orders at nervous recruits.",
+      "exits": {
+        "west": "town_square"
+      },
+      "items": ["iron_helmet", "leather_armor"],
+      "enemies": [],
+      "is_safe": true
+    },
+    "darkwood_road": {
+      "name": "Road to the Darkwood",
+      "description": "A packed-dirt road that narrows as it approaches the tree line. The canopy ahead is so thick it blocks the sky. Locals don't come here after dark.",
+      "exits": {
+        "south": "town_square",
+        "north": "darkwood_edge"
+      },
+      "items": [],
+      "enemies": ["wolf"]
+    },
+    "darkwood_edge": {
+      "name": "Darkwood Edge",
+      "description": "The first trees of the Darkwood loom overhead, ancient oaks with bark like charred bone. The forest floor is carpeted in shadow. You can hear something moving in the undergrowth.",
+      "exits": {
+        "south": "darkwood_road",
+        "north": "darkwood_clearing",
+        "east": "darkwood_hollow"
+      },
+      "items": [],
+      "enemies": ["goblin", "wolf"]
+    },
+    "darkwood_hollow": {
+      "name": "Darkwood Hollow",
+      "description": "A natural depression in the forest floor, ringed by mossy boulders. Goblin footprints mark the mud. An old chest sits half-buried in leaves.",
+      "exits": {
+        "west": "darkwood_edge"
+      },
+      "items": ["short_sword", "health_potion"],
+      "enemies": ["goblin", "goblin_brute"]
+    },
+    "darkwood_clearing": {
+      "name": "Darkwood Clearing",
+      "description": "A wide clearing where moonlight actually reaches the ground. A circle of standing stones dominates the center -- ancient and unsettling. Beyond the clearing, a path descends to a ravine.",
+      "exits": {
+        "south": "darkwood_edge",
+        "east": "ravine_path",
+        "north": "dire_wolf_den"
+      },
+      "items": ["leather_boots"],
+      "enemies": ["goblin_brute"]
+    },
+    "dire_wolf_den": {
+      "name": "Dire Wolf Den",
+      "description": "Massive paw prints and the bones of past kills mark this as the territory of something far larger than any common wolf. The smell of wet fur is overwhelming.",
+      "exits": {
+        "south": "darkwood_clearing"
+      },
+      "items": ["chainmail"],
+      "enemies": ["dire_wolf", "wolf"]
+    },
+    "ravine_path": {
+      "name": "Ravine Path",
+      "description": "A narrow trail cuts along the edge of a deep ravine. Loose stones skitter off the edge into darkness. The air grows cold here.",
+      "exits": {
+        "west": "darkwood_clearing",
+        "east": "dungeon_01_entrance"
+      },
+      "items": [],
+      "enemies": ["skeleton_archer"]
+    },
+    "dungeon_01_entrance": {
+      "name": "Ruins Entrance",
+      "description": "The entrance to an ancient ruin, half-swallowed by the earth. Carved stone steps descend into darkness. A faint blue light flickers from somewhere below.",
+      "exits": {
+        "west": "ravine_path",
+        "down": "dungeon_01:entry_hall"
+      },
+      "items": [],
+      "enemies": ["skeleton"]
+    }
+  }
+}

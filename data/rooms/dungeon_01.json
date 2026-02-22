@@ -1,0 +1,106 @@
+{
+  "zone": "dungeon_01",
+  "rooms": {
+    "entry_hall": {
+      "name": "Entry Hall",
+      "description": "A vaulted stone chamber, its ceiling lost in shadow. Blue runes pulse weakly on the walls -- ancient wards that have almost faded. Rubble is strewn across the floor. The air smells of old death.",
+      "exits": {
+        "up": "overworld:dungeon_01_entrance",
+        "north": "guard_room",
+        "east": "collapsed_corridor"
+      },
+      "items": ["leather_armor"],
+      "enemies": ["skeleton"]
+    },
+    "collapsed_corridor": {
+      "name": "Collapsed Corridor",
+      "description": "A hallway that partially caved in long ago. You have to squeeze through a gap in the fallen masonry. Faded murals depict a battle between armored knights and shadowy figures.",
+      "exits": {
+        "west": "entry_hall",
+        "east": "archive"
+      },
+      "items": ["health_potion"],
+      "enemies": ["skeleton", "skeleton_archer"]
+    },
+    "archive": {
+      "name": "Ruined Archive",
+      "description": "Rows of shattered stone shelves once held countless scrolls and tomes. Now only fragments remain -- most have crumbled to dust. A heavy iron door is set into the north wall.",
+      "exits": {
+        "west": "collapsed_corridor",
+        "north": "upper_vault"
+      },
+      "items": ["iron_shield", "strength_potion"],
+      "enemies": ["skeleton_archer", "skeleton_archer"]
+    },
+    "guard_room": {
+      "name": "Guard Room",
+      "description": "This room once housed the dungeon's wardens. Stone bunks line the walls, long since abandoned. Weapons racks hold rusted spears. Something moves in the far corner -- something that should be dead.",
+      "exits": {
+        "south": "entry_hall",
+        "north": "barracks",
+        "east": "torture_chamber"
+      },
+      "items": ["short_sword", "wooden_shield"],
+      "enemies": ["skeleton", "skeleton"]
+    },
+    "torture_chamber": {
+      "name": "Torture Chamber",
+      "description": "Iron implements line the walls. Chains hang from the ceiling. The floor is stained dark brown. You try not to think too hard about what happened here. A skeleton is slumped in the corner, still manacled to the wall.",
+      "exits": {
+        "west": "guard_room"
+      },
+      "items": ["iron_helmet", "antidote"],
+      "enemies": ["skeleton"]
+    },
+    "barracks": {
+      "name": "Barracks",
+      "description": "A large dormitory-style room with rows of stone beds. The undead that rose here have pushed the beds aside, forming a crude ritual circle in the center. Candles made of bone burn with black flame.",
+      "exits": {
+        "south": "guard_room",
+        "north": "commanders_quarters"
+      },
+      "items": ["health_potion", "health_potion"],
+      "enemies": ["skeleton", "skeleton", "goblin_brute"]
+    },
+    "commanders_quarters": {
+      "name": "Commander's Quarters",
+      "description": "A once-lavish room now stripped bare. A large desk of carved stone remains, along with a shattered war map on the wall. The troll standing in the center of the room regards you with dull, hungry eyes.",
+      "exits": {
+        "south": "barracks",
+        "east": "upper_vault"
+      },
+      "items": ["chainmail", "long_sword"],
+      "enemies": ["troll"]
+    },
+    "upper_vault": {
+      "name": "Upper Vault",
+      "description": "A vast chamber with a vaulted ceiling painted with faded celestial murals. Stone sarcophagi line the walls. In the center, a towering figure in tattered robes floats inches off the ground, its eyes burning with cold blue fire.",
+      "exits": {
+        "south": "archive",
+        "west": "commanders_quarters",
+        "north": "lich_sanctum"
+      },
+      "items": ["greater_health_potion", "ring_of_strength"],
+      "enemies": ["lich"]
+    },
+    "lich_sanctum": {
+      "name": "The Lich's Sanctum",
+      "description": "The innermost chamber. The air crackles with necrotic energy. Runes of binding and power cover every surface, floor to ceiling. An ornate throne of black stone dominates the room. In the north wall, a sealed archway is engraved with a dragon motif -- beyond it, something ancient stirs.",
+      "exits": {
+        "south": "upper_vault",
+        "north": "dragon_lair"
+      },
+      "items": ["amulet_of_vitality", "greater_health_potion"],
+      "enemies": []
+    },
+    "dragon_lair": {
+      "name": "The Dragon's Lair",
+      "description": "A colossal cavern, its ceiling stretching hundreds of feet overhead. Gold and bones carpet the floor -- the accumulated plunder of centuries. A titanic red dragon raises its head from a mound of treasure, smoke curling from its nostrils. Its eyes fix on you with ancient, contemptuous intelligence. 'Another mortal comes to die,' it rumbles.",
+      "exits": {
+        "south": "lich_sanctum"
+      },
+      "items": [],
+      "enemies": ["dragon"]
+    }
+  }
+}

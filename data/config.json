@@ -1,0 +1,31 @@
+{
+  "player": {
+    "starting_health": 100,
+    "starting_stats": {
+      "strength": 12,
+      "dexterity": 10,
+      "constitution": 12,
+      "intelligence": 8
+    },
+    "base_attack": 8,
+    "base_defense": 3,
+    "inventory_capacity": 20,
+    "starting_room": "overworld:town_square",
+    "starting_items": ["rusty_dagger", "health_potion", "health_potion"]
+  },
+  "combat": {
+    "damage_variance_min": 0.85,
+    "damage_variance_max": 1.15,
+    "flee_success_chance": 0.60,
+    "minimum_damage": 1
+  },
+  "difficulty": {
+    "enemy_health_multiplier": 1.0,
+    "enemy_attack_multiplier": 1.0,
+    "enemy_defense_multiplier": 1.0
+  },
+  "save": {
+    "default_slot": "saves/slot1.json",
+    "auto_save": false
+  }
+}
